@@ -22,7 +22,7 @@ int main()
     inPutBitStream inStream("test.bin");
     while(!inStream.eof())
     {
-        cout <<  inStream.readBit();
+        cout <<  (short) inStream.readBit();
     }
     cout << endl;
     inStream.close();
