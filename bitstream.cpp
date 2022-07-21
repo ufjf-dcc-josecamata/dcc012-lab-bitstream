@@ -65,8 +65,8 @@ outPutBitStream::outPutBitStream(const char* filename):
 
 void outPutBitStream::writeBit(uint8_t bit)
 {
-    // Se o bitPos for igual  otamanho do buffer, precisamos escrever o buffer no arquivo
-    // e reincilar o bitCount e o buffer
+    // Se o bitPos for igual  o tamanho do buffer, precisamos escrever o buffer no arquivo
+    // e reiniciar o bitPos e o buffer
     if(bitPos == buffer_size)
     {
         outFile.write((char*)&buffer, sizeof(uint8_t));
@@ -88,7 +88,7 @@ void outPutBitStream::close()
     {
         outFile.write((char*)&buffer, sizeof(uint8_t));
     }
-    // Escrevemos o bitCount no espaõ reservado no inicio do arquivo.
+    // Escrevemos o bitCount no espaco reservado no inicio do arquivo.
     outFile.seekp(0, ios::beg);
     outFile.write((char*)&bitCount, sizeof(uint64_t));
     outFile.seekp(0, ios::end);
