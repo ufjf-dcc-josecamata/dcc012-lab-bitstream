@@ -20,18 +20,9 @@ int main()
     outStream.close();
 
     inPutBitStream inStream("test.bin");
-    uint8_t bit = inStream.readBit();
     while(!inStream.eof())
     {
-        if(bit)
-        {
-            cout << "1";
-        }
-        else
-        {
-            cout << "0";
-        }
-        bit = inStream.readBit();
+        cout <<  inStream.readBit();
     }
     cout << endl;
     inStream.close();
