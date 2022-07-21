@@ -12,13 +12,36 @@ bitStream::bitStream():
 }
 
 // TODO: implementar o método setBit.
+// Exemplo de uso: setar o 4 bit para 1     
+// Status do buffer:  00001001
+// pos=4                 ^
+// bit=1
+// Etapas: criar mascara deslocando bit em pos posicoes: bit << pos
+//  mask              00010000
+// Aplicar OR entre buffer e mask
+//       00001001   OR
+//       00010000   
+//       --------
+//       00011001
+// Armazendar resultado final em buffer
 void bitStream::setBit(uint8_t pos, uint8_t bit)
 {
 
     
 }
 
-// TODO: implementar o método getBit.
+// Exemplo de uso:  retornar o bit na quarta posição do buffer      
+// Status do buffer:  00011001
+// pos=4                 ^
+// Etapas: criar mascara deslocando 1 em pos posicoes: 1 << pos
+//  mask              00010000
+// Aplicar AND entre buffer e mask
+//       00011001   AND
+//       00010000   
+//       --------
+//       00010000
+// Deslocar 4 (pos) bits a direira e retorna o resultado
+//       00000001
 uint8_t bitStream::getBit(uint8_t k)
 {
 
