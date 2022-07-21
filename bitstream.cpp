@@ -14,15 +14,20 @@ bitStream::bitStream():
 // TODO: implementar o método setBit.
 void bitStream::setBit(uint8_t pos, uint8_t bit)
 {
-
-    
+    // [00000000] buffer
+    //  00000100 po = 2
+    //  00000100 buffer
+    this->buffer |= (bit << pos);     
 }
 
 // TODO: implementar o método getBit.
 uint8_t bitStream::getBit(uint8_t k)
 {
-
-
+    // Ex. k=3
+    // [00000100] buffer
+    //  00001000  1 << k  & 
+    //  00000000
+    return buffer & (1 << k);
 }
 
 
