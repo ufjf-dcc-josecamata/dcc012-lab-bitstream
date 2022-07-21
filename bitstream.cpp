@@ -30,6 +30,7 @@ void bitStream::setBit(uint8_t pos, uint8_t bit)
     
 }
 
+// TODO: Implementar a extração de bit
 // Exemplo de uso:  retornar o bit na quarta posição do buffer      
 // Status do buffer:  00011001
 // pos=4                 ^
